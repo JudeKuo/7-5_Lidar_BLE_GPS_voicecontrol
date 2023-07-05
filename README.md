@@ -1,1 +1,3 @@
 # 7-5_Lidar_BLE_GPS_voicecontrol
+裡面包含3片Arduino UNO的程式碼與ESP32程式碼
+功能:可以透過聲控控制車子到指定地點，障礙物過近時車子會停下
