@@ -204,17 +204,10 @@ void loop() {
   }
     
   if(dis<30){ //避障
-//    check+=1;
-//    Serial.print("dis:");
-//    Serial.println(dis);
-//    Serial.print("check:");
-//    Serial.println(check);
-//    if(check>=5){ 
       analogWrite(PWMPin, 0);
       RPM_d=0;
       Serial.println(dis);
       Serial.println("stoppppppppppp");
-//  }
   }
   else{
 //    check=0;
