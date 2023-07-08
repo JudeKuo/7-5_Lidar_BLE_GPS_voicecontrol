@@ -2,8 +2,8 @@
 #include <SoftwareSerial.h>   // 引用程式庫
 #include <MsTimer2.h>
 //PID
-float kp = 2;
-float ki = 0.015;
+float kp = 1;
+float ki = 0.003;
 float kd = 0.0;
 //腳位
 const byte interruptPinA = 2;
