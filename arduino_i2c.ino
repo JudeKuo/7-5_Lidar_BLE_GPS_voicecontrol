@@ -1,27 +1,19 @@
 #include <Wire.h>
-
-// 定義ESP32的I2C位址
-#define ESP32_I2C_ADDRESS 0x12
 #include <stdlib.h>
-
-volatile long hedgehog_x, hedgehog_y;// coordinates of hedgehog (X,Y), mm
-long hedgehog_z;// height of hedgehog, mm
-int hedgehog_pos_updated;// flag of new data from hedgehog received
-
-bool high_resolution_mode;
-
-//#define DISTANCE_SENSOR_ENABLED
-
+#define ESP32_I2C_ADDRESS 0x12 // 定義ESP32的I2C位址
 #define HEDGEHOG_BUF_SIZE 40 
 #define HEDGEHOG_CM_DATA_SIZE 0x10
 #define HEDGEHOG_MM_DATA_SIZE 0x16
-byte hedgehog_serial_buf[HEDGEHOG_BUF_SIZE];
-byte hedgehog_serial_buf_ofs;
-
 #define POSITION_DATAGRAM_ID 0x0001
 #define POSITION_DATAGRAM_HIGHRES_ID 0x0011
-unsigned int hedgehog_data_id;
 
+byte hedgehog_serial_buf[HEDGEHOG_BUF_SIZE];
+byte hedgehog_serial_buf_ofs;
+unsigned int hedgehog_data_id;
+volatile long hedgehog_x, hedgehog_y;// coordinates of hedgehog (X,Y), mm
+long hedgehog_z;// height of hedgehog, mm
+int hedgehog_pos_updated;// flag of new data from hedgehog received
+bool high_resolution_mode;
 typedef union {byte b[2]; unsigned int w;int wi;} uni_8x2_16;
 typedef union {byte b[4];float f;unsigned long v32;long vi32;} uni_8x4_32;
 
